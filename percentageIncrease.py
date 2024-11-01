@@ -3,6 +3,7 @@ import streamlit as st
 st.header("Percentage Increase Calculator")
 a = st.number_input("Enter initial value: ",min_value=0, value=25,step=1)
 b = st.number_input("Enter final value: ", min_value=1,value=50,step=2)
+perIncrease=0
 
 def percentageIncrease(x,y):
     return ((y-x)/x)*100
