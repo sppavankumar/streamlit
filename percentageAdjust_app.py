@@ -13,11 +13,9 @@ def main():
     if st.button("Calculate"):
         if amount_input > 0 and pct_input > 0:
             finalAmount = pctAmount(amount_input,pct_input)
-            st.success(f"\${amount_input:.2f} adjusted to {pct_input:.2f}\% = **\${finalAmount:.2f}**") 
+            st.success(f"{amount_input:.2f} adjusted by {pct_input:.2f} percent is = **\${finalAmount:.2f}**") 
         else:
             st.warning("Please enter number greater than zero")
-    else:
-        st.error("Please click on the button")
     
 if __name__ == "__main__":
     main()
