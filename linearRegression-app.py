@@ -24,7 +24,7 @@ st.pyplot(fig)
 # Preparing data for training
 x = df[['Experience Years']]
 y = df['Salary']
-x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.9, random_state=42)
 
 # Training the Linear Regression model
 model = linear_model.LinearRegression()
@@ -43,3 +43,7 @@ st.write("### Predict Salary")
 experience = st.slider("Select Years of Experience", min_value=0.0, max_value=20.0, step=0.1)
 predicted_salary = model.predict([[experience]])[0]
 st.write(f"Predicted Salary for {experience} years of experience: ${predicted_salary:.2f}")
+intercept_LR = model.intercept_
+st.write(f"The intercept is: {intercept_LR}")
+coeff_LR = model.coef_
+st.write(f"The co-efficient is: {coeff_LR}")
